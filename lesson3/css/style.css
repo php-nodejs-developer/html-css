@@ -1,8 +1,15 @@
 /* комментарии */
+* {
+    box-sizing: border-box;
+    /* width(padding(10) + border(1) + div + border(1) + padding(10))*/
+
+}
+
 body { /* селектор тега */
     font-size: 20px; /* размер шрифта */
     background-color: #D7CCC8; /* цвет фона */
     color: #4E342E; /* цвет текста */
+    margin: 0;
 }
 
 a { /* селектор тега */
@@ -26,6 +33,12 @@ a { /* селектор тега */
        normal
        от 100 до 900
     */
+    padding: 15px 20px;
+    display: inline-block; /* блочно-строчный */
+
+    /* display: block; блочный */
+    /* display: inline; строчный */
+    /* display: none; */
 }
 /* section  h1 вложенный селектор <section><div><h1></h1></div></section>*/
 section > h1 { /* дочерний селектор <section><h1></h1></section> */
@@ -41,4 +54,52 @@ section > h1 { /* дочерний селектор <section><h1></h1></section>
 
 .item { /* селектор класса class="item" */
     background-color: #EFEBE9;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
 }
+
+.item img {
+    width: 100%; /* ширина */
+    height: auto; /* высота */
+    padding: 10px;
+    border: 1px solid #4E342E;
+    /* border(1) + padding(10) + width(div) + padding(10) + border(1) */
+    border-radius: 50%;
+    opacity: .7; /* 0.7 */
+}
+
+.item a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #4E342E; /* transparent */
+    color: #D7CCC8;
+    border-radius: 5px;
+    /*width: 100%;*/
+    display: block;
+    text-align: center;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.text-bold {
+    font-weight: bold;
+}
+
+
+
+/* <div> <p>frfr frfgrg rgfergreg gerg3r</p> </div> */
+/*
+div {
+    opacity: .7;
+    background-color: rgb(38, 198, 218);
+
+
+    background-color: rgba(38, 198, 218, 0.7);
+}
+*/
+
+
