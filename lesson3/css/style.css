@@ -1,0 +1,44 @@
+/* комментарии */
+body { /* селектор тега */
+    font-size: 20px; /* размер шрифта */
+    background-color: #D7CCC8; /* цвет фона */
+    color: #4E342E; /* цвет текста */
+}
+
+a { /* селектор тега */
+    color: inherit; /* наследование стиля от родителя */
+    text-decoration: none; /* отсутствие декорирования */
+    /*
+        overline линия над текстом
+        line-through перечеркнутый текст
+        underline линия под текстом
+        blink не используем
+    */
+    text-transform: uppercase; /* верхний регистр */
+    /*
+        lowercase нижний регистр
+        capitalize первая буква заглавная
+    */
+    font-weight: bold;
+    /*
+       bolder
+       lighter
+       normal
+       от 100 до 900
+    */
+}
+/* section  h1 вложенный селектор <section><div><h1></h1></div></section>*/
+section > h1 { /* дочерний селектор <section><h1></h1></section> */
+    text-transform: uppercase;
+    text-align: center; /* выравнивание по горизонтали */
+    /*
+        center по центру
+        left по левому краю
+        right по правому краю
+        justify растягивание
+    */
+}
+
+.item { /* селектор класса class="item" */
+    background-color: #EFEBE9;
+}

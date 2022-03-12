@@ -1,0 +1,27 @@
+ul > .active {}
+
+div.block_red .text {}
+
+ul > li.active {}
+
+section > #image {}
+
+section div#image {}
+
+input[type=text] {}
+
+a.link_hovered[target=_blank]{}
+
+.tip + .icon {}
+
+.title ~ .card {}
+
+
+/* специфичность */
+.navbar #one {}
+
+#three {}
+
+.navbar .active {}
+
+#two.active {}
