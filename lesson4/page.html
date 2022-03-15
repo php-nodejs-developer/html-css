@@ -3,18 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="css/flex-grid.css">
+    <link rel="stylesheet" href="css/page.css">
 </head>
 <body>
-<!-- первый ряд: 3 div одинаковой ширины -->
-<!-- второй ряд: 1 div на 2 колонки, 2 div на 8 колонок, 3 div на 2 колонки -->
-<!-- третий ряд: 1 div на 3 колонки, 2 div на 3 колонки, 3 div на 6 колонок -->
+<!-- первый ряд: три div одинаковой ширины -->
+<!-- второй ряд: 1й div на 2 колонки, 2й div на 8 колонок, 3й div на 2 колонки -->
+<!-- третий ряд: 1й div на 3 колонки, 2й div на 3 колонки, 3й div на 6 колонок -->
 <section>
-    <div>
-        <h2>Lorem ipsum.</h2>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing
-            elit. Commodi quis similique unde!
-        </p>
+    <div class="flex-row margin-bottom">
+        <div class="col-4 margin">
+            <h2>Lorem ipsum.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Commodi quis similique unde!
+            </p>
+        </div>
+        <div class="col-4 border margin">
+            <h2>Lorem ipsum.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Commodi quis similique unde!
+            </p>
+        </div>
+        <div class="col-4 border margin">
+            <h2>Lorem ipsum.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing
+                elit. Commodi quis similique unde!
+            </p>
+        </div>
+
+        <!-- второй ряд: 1й div на 2 колонки, 2й div на 8 колонок, 3й div на 2 колонки -->
+        <div class="flex-row">
+            <div class="col-2">
+                <h2>Lorem ipsum.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Commodi quis similique unde!
+                </p>
+            </div>
+            <div class="col-8">
+                <h2>Lorem ipsum.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Commodi quis similique unde!
+                </p>
+            </div>
+            <div class="col-2">
+                <h2>Lorem ipsum.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Commodi quis similique unde!
+                </p>
+            </div>
+        </div>
+        <!-- третий ряд: 1й div на 3 колонки, 2й div на 3 колонки, 3й div на 6 колонок -->
+        <div class="flex-row margin-bottom">
+            <div class="col-3">
+                <h2>Lorem ipsum.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Commodi quis similique unde!
+                </p>
+            </div>
+            <div class="col-3">
+                <h2>Lorem ipsum.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Commodi quis similique unde!
+                </p>
+            </div>
+            <div class="col-6">
+                <h2>Lorem ipsum.</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Commodi quis similique unde!
+                </p>
+            </div>
+        </div>
+
+        <div class="flex-row margin-bottom">
+            <div class="col-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium assumenda corporis cupiditate
+                eaque explicabo iste quas saepe soluta suscipit tempore!
+            </div>
+            <div class="col-8 flex-column">
+                <p>
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Fuga hic odit vel!
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet,
+                    consectetur adipisicing elit. Fuga hic odit vel!
+                </p>
+            </div>
+        </div>
+
     </div>
 
 </section>
