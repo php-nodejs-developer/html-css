@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Flex Box</title>
+    <link rel="stylesheet" href="css/flex-box.css">
+</head>
+<body class="container">
+<section>
+    <p>
+        <span class="bold">CSS flexbox (Flexible Box Layout Module)</span> - модуль макета гибкого контейнера,
+        представляет собой способ компоновки элементов.
+    </p>
+    <p>Flexbox состоит из:</p>
+    <ol>
+        <li>гибкого контейнера (flex container)</li>
+        <li>гибких элементов (flex items).</li>
+    </ol>
+
+    <p>
+        Flex элементы могут выстраиваться в строку или столбик, а оставшееся свободное пространство распределяется между
+        ними различными способами.
+    </p>
+
+    <p>Основные проблемы, которые решает Flex Box технология:</p>
+    <ol>
+        <li>Расположение элементов в одном из направлений: слева направо, справа налево, сверху вниз или снизу вверх.
+        </li>
+        <li>Автоматическое определение размеров элементов таким образом, чтобы они вписывались в доступное
+            пространство.
+        </li>
+        <li>Горизонтальное и вертикальное выравнивание.</li>
+        <li>Создание колонок одинаковой высоты.</li>
+        <li>Создание прижатого к низу страницы подвала сайта (footer).</li>
+    </ol>
+
+    <img class="flex-model" src="img/flex-model.png" alt="flex model">
+</section>
+
+
+<h2>Направление главной оси</h2>
+<div class="flex-direction">
+    <div>
+        <h2>1. Lorem ipsum.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quod?</p>
+    </div>
+    <div>
+        <h2>2. Lorem ipsum.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quod?</p>
+    </div>
+    <div>
+        <h2>3. Lorem ipsum.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quod?</p>
+    </div>
+    <div>
+        <h2>4. Lorem ipsum.</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse, quod?</p>
+    </div>
+</div>
+
+
+<h2>Перенос строк во flex контейнере</h2>
+<div class="flex-wrap">
+    <img src="img/1.jpg">
+    <img src="img/2.jpg">
+    <img src="img/3.jpg">
+    <img src="img/4.jpg">
+    <img src="img/5.jpg">
+    <img src="img/6.jpg">
+    <img src="img/7.jpg">
+</div>
+
+
+<h2>Распределение пространства вокруг флекс-элементов вдоль главной оси контейнера</h2>
+<div class="justify-content">
+    <img src="img/1.jpg">
+    <img src="img/2.jpg">
+    <img src="img/3.jpg">
+    <img src="img/4.jpg">
+    <img src="img/5.jpg">
+</div>
+
+
+<h2>Распределение флекс-элементов вдоль поперечной оси</h2>
+<div class="align-items">
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, qui.
+        <span>2021.03.02</span>
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, at consequuntur dolorem eius et ex facilis harum
+        incidunt ipsam necessitatibus omnis quasi quibusdam! Ad amet autem eaque quae sint suscipit vitae voluptate. Ad
+        asperiores blanditiis, debitis eos eum, eveniet illum iure laborum mollitia, nulla repudiandae voluptates.
+        Alias, odit, vel!
+        <span>2021.07.22</span>
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, qui.
+        <span>2020.11.10</span>
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, qui.
+        <span>2021.09.12</span>
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, qui.
+        <span>2021.01.01</span>
+    </p>
+</div>
+
+
+<h2>Многострочное выравнивание <br> (выравнивания строк внутри флекс-контейнера по поперечной оси)</h2>
+<div class="align-content">
+    <div>
+        <h2>Lorem ipsum.</h2>
+        <img src="img/1.jpg">
+    </div>
+    <div>
+        <h2>Lorem ipsum.</h2>
+        <img src="img/2.jpg">
+    </div>
+    <div>
+        <h2>Lorem ipsum.</h2>
+        <img src="img/3.jpg">
+    </div>
+    <div>
+        <h2>Lorem ipsum.</h2>
+        <img src="img/4.jpg">
+    </div>
+    <div>
+        <h2>Lorem ipsum.</h2>
+        <img src="img/5.jpg">
+    </div>
+    <div>
+        <h2>Lorem ipsum.</h2>
+        <img src="img/6.jpg">
+    </div>
+</div>
+
+
+<!-- Свойства дочерних (flex) элементов -->
+<h2>Порядок отображения элементов</h2>
+<div class="order">
+    <span>1</span>
+    <span class="order-2">2 (order: 2)</span>
+    <span>3</span>
+    <span class="order-1">4 (order: 1)</span>
+    <span class="order--1">5 (order: -1)</span>
+</div>
+
+
+<div class="sizes">
+    <h2>Изменение размеров</h2>
+    <div class="flex-1">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusamus amet aut commodi consequuntur, dicta
+        dignissimos distinctio ducimus explicabo facilis in ipsa itaque, laborum maiores non odit optio quae quasi qui,
+        quod repellendus reprehenderit saepe tempora? Corporis exercitationem, vel? Assumenda, cupiditate ducimus ea
+        exercitationem illum impedit labore neque obcaecati voluptate!
+        exercitationem illum impedit labore neque obcaecati voluptate!
+        exercitationem illum impedit labore neque obcaecati voluptate!
+    </div>
+    <div class="flex-2">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque, deleniti numquam. Accusantium ad adipisci
+        aliquam autem consectetur culpa dolore eos, fuga id incidunt, iure maiores modi molestiae, molestias neque non
+        qui quis similique soluta suscipit tempora tempore velit vero voluptates voluptatibus. Accusamus eos ipsam
+        ipsum, laudantium minus repellendus tenetur. Blanditiis consequuntur corporis cumque enim impedit incidunt ipsum
+        nemo possimus quae qui rerum soluta ullam, veritatis? Alias animi autem illo itaque placeat quasi reprehenderit,
+
+    </div>
+</div>
+
+
+<section id="gallery">
+    <h2>Галерея изображений</h2>
+    <div><img src="img/1.jpg"></div>
+    <div><img src="img/2.jpg"></div>
+    <div><img src="img/3.jpg"></div>
+    <div><img src="img/4.jpg"></div>
+    <div><img src="img/5.jpg"></div>
+    <div><img src="img/6.jpg"></div>
+    <div><img src="img/7.jpg"></div>
+    <div><img src="img/8.jpg"></div>
+</section>
+
+
+<form action="#" method="post">
+    <h2>Форма</h2>
+    <div>
+        <label for="name">Имя:</label>
+        <input name="name" id="name">
+    </div>
+    <div>
+        <label for="lang">Какой язык программирования Вы хотите изучать?:</label>
+        <select id="lang" name="lang">
+            <option value="java">Java</option>
+            <option value="php">PHP</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+        </select>
+    </div>
+    <div><input type="submit" value="Отправить"></div>
+</form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

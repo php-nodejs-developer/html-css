@@ -1,0 +1,21 @@
+@import "flex-grid.css";
+
+body {
+    margin: 0;
+}
+
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.item {
+    border: 1px solid #311B92;
+    padding: 5px;
+    /*margin: 5px;*/
+    background-color: #039BE5;
+}
+
+.gap {
+    gap: 10px;
+}

@@ -1,0 +1,330 @@
+body {
+    margin: 0;
+    font-size: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.flex-model {
+    width: 100%;
+    height: auto;
+}
+
+/* Направление главной оси */
+.flex-direction {
+    display: flex; /* элемент становится flex контейнером */
+
+    /* Направление главной оси */
+    flex-direction: row; /* слева направо */
+    flex-direction: row-reverse; /* справа налево */
+    flex-direction: column; /* сверху вниз */
+    flex-direction: column-reverse; /* снизу вверх */
+}
+
+.flex-direction > div {
+    background: #EEEEEE;
+    color: #424242;
+    border: 2px solid #424242;
+    padding: 10px;
+}
+
+
+/* Перенос строк во flex контейнере */
+.flex-wrap {
+    max-width: 960px;
+    margin: 0 auto;
+
+    display: flex; /* элемент становится flex контейнером */
+
+    /* Перенос строк во flex контейнере */
+    /* элементы выстраиваются в одну линию */
+    flex-wrap: nowrap;
+    /* элементы выстраиваются в несколько строк, их направление задаётся свойством flex-direction */
+    flex-wrap: wrap;
+    /* элементы выстраиваются в несколько строк, в направлении, противоположном flex-direction */
+    flex-wrap: wrap-reverse;
+
+    gap: 5px; /* вместо margin: 5px; для img */
+}
+
+.flex-wrap img {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    background-color: #EFEBE9;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    padding: 5px;
+    /*margin: 5px;*/
+    border-radius: 5px;
+}
+
+
+/* Распределение пространства вокруг флекс-элементов вдоль главной оси контейнера */
+.justify-content {
+    display: flex; /* элемент становится flex контейнером */
+
+    /* Распределение пространства вокруг флекс-элементов вдоль главной оси контейнера */
+    justify-content: flex-start; /* элементы прижаты к началу строки */
+    justify-content: flex-end; /* элементы прижаты к концу строки */
+    justify-content: center; /* элементы выравниваются по центру строки */
+    /* элементы равномерно распределяются по всей строке.
+    Первый и последний элемент прижимаются к соответствующим краям контейнера. */
+    justify-content: space-between;
+    /* элементы равномерно распределяются по всей строке. Пустое пространство перед первым и после последнего элементов равно
+    половине пространства между двумя соседними элементами. */
+    justify-content: space-around;
+    /* элементы распределяются так, чтобы расстояние между любыми двумя соседними элементами,
+    а также перед первым и после последнего, было одинаковым. */
+    justify-content: space-evenly;
+}
+
+.justify-content img {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+
+/* Распределение флекс-элементов вдоль поперечной оси */
+.align-items {
+    background: #B3E5FC;
+
+    display: flex; /* элемент становится flex контейнером */
+
+    /* Распределение флекс-элементов вдоль поперечной оси */
+    align-items: center; /* элементы выравниваются по линии поперечной оси поперечной оси контейнера. */
+    align-items: flex-end; /* элементы выравниваются в конце поперечной оси контейнера */
+    align-items: flex-start; /* элементы выравниваются в начале поперечной оси контейнера */
+    align-items: baseline; /* элементы выравниваются по их базовой линии */
+    align-items: stretch; /* элементы растягиваются таким образом, чтобы занять всё доступное пространство контейнера */
+}
+
+.align-items p {
+    flex: 1;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-bottom: 2px solid #039BE5;
+}
+
+.align-items span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+/* Многострочное выравнивание (выравнивания строк внутри флекс-контейнера по поперечной оси) */
+.align-content {
+    background-color: #B9F6CA;
+
+    display: flex; /* элемент становится flex контейнером */
+
+    /* Многострочное выравнивание */
+    height: 1300px; /* необходима высота */
+    flex-wrap: wrap; /* необходимо разрешить перенос */
+    flex-direction: row;
+
+    align-content: stretch; /* строки равномерно растягиваются, заполняя свободное пространство. */
+    align-content: flex-start; /* строки располагаются в начале поперечной оси */
+    align-content: flex-end; /* строки располагаются начиная с конца поперечной оси */
+    align-content: center; /* строки располагаются по центру контейнера */
+    /* строки равномерно распределяются таким образом, чтобы пространство между двумя соседними строками было одинаковым.
+    Пустое пространство перед первой строкой и после последней строки равно половине пространства между двумя соседними строками. */
+    align-content: space-around;
+    /* строки равномерно распределяются в контейнере и расстояние между ними одинаково */
+    align-content: space-between;
+    /* строки равномерно распределяются таким образом, чтобы пространство между двумя соседними строками,
+    а также пространство перед первой строкой и после последней строки было одинаковым */
+    align-content: space-evenly;
+
+    /* justify-content: space-evenly; */
+    gap: 10px; /* вместо margin: 5px; у div*/
+}
+
+.align-content > div {
+    width: 400px;
+    /*margin: 5px;*/
+    padding: 10px;
+    box-shadow: inset 2px 2px 5px rgba(154, 147, 140, 0.5), 1px 1px 5px rgba(255, 255, 255, 1);
+}
+
+.align-content img {
+    max-width: 100%;
+    height: calc(100% - 80px);
+    object-fit: cover;
+}
+.align-content h2 {
+    color: #2E7D32;
+}
+
+
+/* Свойства дочерних (flex) элементов */
+
+/* Порядок отображения элементов */
+/* order - элементы располагаются согласно значениям свойства order от меньшего к большему.
+   Элементы с одинаковым значением order  располагаются в том порядке, в каком они находятся в исходном коде
+*/
+
+.order {
+    display: flex;
+
+    gap: 20px; /* вместо margin: 10px; для span */
+}
+
+.order span {
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    border-radius: 50%;
+    text-align: center;
+    /*margin: 10px;*/
+    box-shadow: inset 0 4px 5px 5px rgba(0, 0, 0, 0.5);
+    background-color: orchid;
+    font-size: 25px;
+}
+
+.order-1{
+    order: 1;
+}
+.order-2 {
+    order: 2;
+}
+.order--1 {
+    order: -1;
+}
+
+
+/* Изменение размеров */
+
+/* https://habr.com/ru/company/ruvds/blog/515298/ */
+
+/* flex-basis - начальный размер элемента (похоже на width).
+   flex-basis: auto | размер
+   auto - указывает размер, основанный на содержимом элемента.
+   размер - задаёт размер элемента в px, mm, pt или в процентах вдоль главной оси (процент вычисляется относительно родителя).
+            Отрицательное значение недопустимо.*/
+
+/* flex-shrink - коэффициент сжатия флекс-элементов в контейнере,
+   задаёт, насколько элемент будет уменьшаться по отношению к другим элементам,
+   чтобы разместить все элементы в одну строку.
+   Принимаются целые или дробные числа. Отрицательные значения игнорируются.
+   Значение по умолчанию: 1 */
+/* https://medium.com/@stasonmars/%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-flex-shrink-%D0%B2-css-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-c41e40767194 */
+
+/* flex-grow - определяет, сколько пространства может занимать флекс-элемент внутри контейнера,
+   Позволяет элементам растягиваться, занимая доступное пространство.
+   Принимаются целые или дробные числа. Отрицательные значения игнорируются.
+   Если для всех элементов установлено значение 1, то они получатся равного размера.
+   Если какой-то элемент получил значение 2, то его размер будет в два раза больше остальных.
+   Значение по умолчанию: 0 */
+/* https://medium.com/@stasonmars/%D0%BA%D0%B0%D0%BA-%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D0%B0%D0%B5%D1%82-flex-grow-%D0%B2-css-%D0%BF%D0%BE%D0%B4%D1%80%D0%BE%D0%B1%D0%BD%D0%BE%D0%B5-%D1%80%D1%83%D0%BA%D0%BE%D0%B2%D0%BE%D0%B4%D1%81%D1%82%D0%B2%D0%BE-557d406be844 */
+
+/* flex - сокращённое свойство (объединение flex-basis, flex-shrink и flex-grow).
+    Элементы могут быть растянуты пропорционально с учётом заданного соотношения или
+    сжаты, чтобы целиком вместить все элементы без переносов в одну строку.
+    flex: flex-grow flex-shrink flex-basis
+    Значение по умолчанию:
+    flex-grow: 0
+    flex-shrink: 1
+    flex-basis: auto
+*/
+
+.sizes {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sizes h2 {
+    flex: 0 0 100%;
+    /* flex-grow: 0;
+       flex-shrink: 0;
+       flex-basis: 100%; от родителя*/
+}
+
+.flex-1,
+.flex-2 {
+    padding: 10px;
+}
+
+.flex-1 {
+    flex: 1;
+    /* flex-grow: 1;
+       flex-shrink: 1;
+       flex-basis: 0%; */
+    background-color: #FFCC80;
+}
+
+.flex-2 {
+    flex: 2;
+    /* flex-grow: 2;
+       flex-shrink: 1;
+       flex-basis: 0%; */
+    background-color: #B39DDB;
+}
+
+
+/* Галерея изображений (flex-wrap, flex, flex-grow) */
+#gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#gallery h2 {
+    flex: 0 0 100%;
+    /* flex-grow: 0;
+       flex-shrink: 0;
+       flex-basis: 100%; от родителя*/
+}
+
+#gallery div {
+    height: 25vh;
+    flex-grow: 1;
+    /* когда масштаб изображения будет увеличен, часть изображения, выходящая за пределы div будет скрыта */
+    overflow: hidden;
+}
+
+#gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* стили применятся к img в момент наведения */
+#gallery img:hover {
+    /* 	увеличение масштаба в 1,5 раза. */
+    transform: scale(1.5);
+    /* масштаб будет увеличен за 2 секунды */
+    transition: transform 2s;
+}
+
+
+/* Форма (flex-grow) */
+form {
+    background-color: #FFCDD2;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    width: 600px;
+    margin: 50px auto;
+    padding: 15px;
+}
+
+form > div {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+label {
+    margin-right: 15px;
+}
+
+input, select {
+    flex-grow: 1;
+}
