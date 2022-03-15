@@ -1,0 +1,22 @@
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.border {
+    border: 2px solid orchid;
+}
+
+.margin {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+.calc-margin .col-3 {
+             /* ширина - размер margin */
+    flex: 0 0 calc(25% - 20px); /* см. поддержку браузеров */
+    max-width: calc(25% - 20px); /* см. поддержку браузеров */
+}
+
+.grow {
+    flex-grow: 1;
+}
