@@ -40,4 +40,78 @@ img {
     object-fit: cover;
 }
 
-/* CSS Grid Layout */
+/* CSS Grid Layout body */
+body {
+    display: grid;
+    grid-template-areas:
+            "header header header" /* первый ряд */
+            "left main right" /* второй ряд */
+            "slider slider slider" /* третий ряд */
+            "footer footer footer"; /* четвертый ряд */
+    grid-template-columns: 1fr minmax(500px, 1200px) 1fr;
+    grid-template-rows: 80px auto 50vh 100px;
+}
+
+header {
+    grid-area: header;
+}
+#left-aside {
+    grid-area: left;
+}
+main {
+    grid-area: main;
+}
+#right-aside {
+    grid-area: right;
+}
+#slider {
+    grid-area: slider;
+}
+footer {
+    grid-area: footer;
+}
+
+/* CSS Grid Layout main */
+
+main {
+    display: grid;
+    /*
+    grid-template-areas:;
+    grid-template-columns:;
+    grid-template-rows:;
+    */
+    grid-template:
+        "image text" /* высота первого ряда */
+        "spec reviews" /* высота второго ряда */
+        ". reviews" /* высота третьего ряда */
+        "similar similar";
+}
+.title {
+    grid-area: text;
+}
+.image {
+    grid-area: image;
+}
+.specifications {
+    grid-area: spec;
+}
+.reviews {
+    grid-area: reviews;
+}
+.similar {
+    grid-area: similar;
+    display: flex;
+}
+
+.specifications h3,
+.reviews h3 {
+    text-transform: uppercase;
+}
+
+.specifications table,
+.specifications td {
+    border: 2px solid #4E342E;
+    border-collapse: collapse;
+}
+
+
