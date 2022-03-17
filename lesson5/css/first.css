@@ -1,0 +1,43 @@
+body {
+    margin: 0;
+    font-size: 20px;
+    background-color: #D7CCC8;
+}
+
+header,
+footer {
+    background: #3E2723;
+    color: #EFEBE9;
+}
+
+main {
+    background-color: #EFEBE9;
+    color: #3E2723;
+}
+
+#right-aside,
+#left-aside {
+    background-color: #D7CCC8;
+}
+
+#slider {
+    box-shadow: inset 0 4px 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 1rem;
+    background: url("../img/flowers.jpg");
+}
+
+.reviews div:nth-child(odd) {
+    background-color: #FAFAFA;
+}
+
+.reviews div:nth-child(even) {
+    background-color: #D7CCC8;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CSS Grid Layout */
