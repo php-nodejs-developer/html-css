@@ -1,0 +1,49 @@
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 25px;
+    color: #5D4037;
+}
+
+#relative,
+#absolute,
+#absolute-in-relative,
+#fixed
+{
+    padding: 50px 60px;
+    border: 1px solid #5D4037;
+    background: orangered;
+}
+
+.relative {
+     position: relative;
+     top: 40px;
+     left: 40px;
+ }
+
+.absolute {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
+
+.relative-for-absolute {
+    position: relative;
+    height: 250px;
+    width: 400px;
+    background: #5D4037;
+}
+
+.absolute-in-relative {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+
+.fixed {
+    position: fixed;
+    top: 30%;
+    left: 30%;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Позиционирование</title>
+    <link rel="stylesheet" href="position.css">
+</head>
+<body>
+<h2>Позиционирование</h2>
+<p>
+    <strong>CSS-позиционирование</strong>
+     описывает, как любой из элементов может быть размещен независимо от порядка документа (т.е. извлечен из «потока»)
+</p>
+
+<p>
+    Свойство <strong>position</strong> определяет, какой из алгоритмов позиционирования используется для вычисления положения блока.
+    Свойство не наследуется.
+</p>
+
+<h3>Значения свойсвта position:</h3>
+<ul>
+    <li>
+        <strong>static</strong>
+        (по умолчанию) - блок располагается в соответствии с нормальным потоком. Свойства top, right, bottom и left не применяются.
+    </li>
+    <li>
+        <strong>relative</strong>
+         - блок смещается относительно его нормального положения и не влияет на положение любых следующих блоков.
+        Такое смещение может привести к перекрытию других блоков. Положение блока задается с помощью свойств top, right, bottom и left.
+    </li>
+    <li>
+        <strong>absolute</strong>
+         - расположение элемента относительно его ближайшего предка с position: relative или относительно документа.
+        Положение блока задается с помощью свойств top, right, bottom и left.
+    </li>
+    <li>
+        <strong>fixed</strong>
+        (подвид абсолютного позиционирования) - расположение элемента относительно видимой части браузера.
+        Когда страницу прокручивают, фиксированный элемент остаётся на своём месте и не прокручивается вместе со страницей.
+        Положение блока задается с помощью свойств top, right, bottom и left.
+    </li>
+</ul>
+
+<p>Примеры</p>
+<h4>position: relative</h4>
+<form name="position-relative">
+    <label>Нормально расположение: <input type="radio" checked name="relative"></label> <br>
+    <label>Relative расположение: <input type="radio" value="relative"  name="relative"></label>
+</form>
+<div id="relative">Нормальное расположение элемента в потоке</div>
+
+<pre>
+.relative {
+    position: relative;
+    top: 40px;
+    left: 40px;
+}
+</pre>
+
+<h4>position: absolute</h4>
+<form name="position-absolute">
+    <label>Нормально расположение: <input type="radio" checked name="absolute"></label> <br>
+    <label>Absolute расположение: <input type="radio" value="absolute"  name="absolute"></label>
+</form>
+<div id="absolute">Нормальное расположение элемента в потоке</div>
+
+<pre>
+.absolute {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+}
+</pre>
+
+<h4>position: absolute in relative</h4>
+<form name="position-absolute-in-relative">
+    <label>Нормально расположение: <input type="radio" checked name="absolute-in-relative"></label> <br>
+    <label>Absolute in Relative расположение: <input type="radio" value="absolute-in-relative"  name="absolute-in-relative"></label>
+</form>
+<div class="relative-for-absolute">
+    <div id="absolute-in-relative">Нормальное расположение элемента в потоке</div>
+</div>
+
+<pre>
+.relative-for-absolute {
+    position: relative;
+}
+
+.absolute-in-relative {
+    position: absolute;
+    top: 20px;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+}
+</pre>
+
+<h4>position: fixed</h4>
+<form name="position-fixed">
+    <label>Нормально расположение: <input type="radio" checked name="fixed"></label> <br>
+    <label>Fixed расположение: <input type="radio" value="fixed"  name="fixed"></label>
+</form>
+<div id="fixed">Нормальное расположение элемента в потоке</div>
+
+<pre>
+.fixed {
+    position: fixed;
+    top: 30%;
+    left: 30%;
+}
+</pre>
+
+<script src="position.min.js"></script>
+</body>
+</html>
