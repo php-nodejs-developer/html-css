@@ -129,8 +129,22 @@ main div:nth-child(4) > div {
     width: 67%;
     display: flex;
     flex-direction: column;
+    padding-right: 0;
+    padding-bottom: 0;
 }
 
 main div:nth-child(4) > div > a {
     margin-top: auto;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+
+
+.item a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 3px;
+    text-transform: capitalize;
 }
