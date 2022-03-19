@@ -1,0 +1,136 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    font-size: 20px;
+}
+img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+header {
+    background-color: rgb(21, 101, 192);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    /* padding: 10px; ??? */
+}
+header a {
+    color: rgb(227, 242, 253);
+    text-decoration: none;
+    text-transform: uppercase;
+    border-bottom: 3px solid transparent;
+    /* height: 100%; ??? */
+    padding: 15px 30px;
+    display: inline-block;
+}
+header a.active {
+    border-color: rgb(227, 242, 253);
+}
+
+input {
+    border: 2px solid rgb(227, 242, 253);
+}
+
+.carousel {
+    margin-top: 110px;
+}
+
+.carousel div {
+    display: none;
+}
+
+.carousel div.active {
+    display: block;
+}
+
+.carousel div {
+    position: relative;
+}
+
+.carousel img {
+    display: block;
+}
+
+.carousel span {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: rgb(227, 242, 253);
+    background-color: rgb(21, 101, 192);
+    padding: 10px 20px;
+}
+
+.margin-bottom40 {
+    margin-bottom: 40px;
+}
+
+/* <span class="up-button">UP</span> */
+.up-button {
+    position: fixed;
+    bottom: 50px;
+    right: 60px;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    /* padding: 40px; */
+    color: rgb(227, 242, 253);
+    background-color: rgb(21, 101, 192);
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    color:  rgb(21, 101, 192);
+}
+
+main div {
+    background-color: rgb(227, 242, 253);
+    padding: 10px;
+}
+
+main a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgb(227, 242, 253);
+    background-color: rgb(21, 101, 192);
+}
+
+main div:nth-child(4) {
+    grid-column: 1 / 3;
+    display: flex;
+}
+
+main div:nth-child(4) img {
+    height: 100%;
+    width: 33%;
+}
+
+main div:nth-child(4) > div {
+    width: 67%;
+    display: flex;
+    flex-direction: column;
+}
+
+main div:nth-child(4) > div > a {
+    margin-top: auto;
+}
