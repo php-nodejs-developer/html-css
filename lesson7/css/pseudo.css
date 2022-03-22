@@ -1,0 +1,220 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+    color: #5D4037;
+    font-size: 25px;
+    background-color: #EDC7B7;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.example {
+    background-color: #EEE2DC;
+    text-align: center;
+    padding: 1rem;
+}
+
+.example pre {
+    box-shadow: inset 0 4px 5px 5px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem 1.5rem 0 1.5rem;
+    display: inline-block;
+    text-align: left;
+    user-select: none;
+}
+
+/* ПСЕВДОЭЛЕМЕНТЫ */
+
+/* first-letter, first-line */
+.elem::first-letter,
+.text::first-line {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* selection */
+.select::selection {
+    color: yellow;
+    background-color: orangered;
+}
+
+/* before, after */
+.before-after::before {
+    content: "♥";
+    color: red;
+    margin-right: 5px;
+}
+
+.before-after::after {
+    content: "\2B50";
+    margin-left: 5px;
+}
+
+.quote {
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: rgb(178, 235, 242);
+    padding: 1rem;
+    text-align: justify;
+}
+
+.quote::before {
+    content: "\275D";
+    color: rgb(0, 96, 100);
+}
+
+.quote::after {
+    content: "\275E";
+    color: rgb(0, 96, 100);
+}
+
+/* ПСЕВДОКЛАССЫ */
+
+/* first-child - odd */
+nav a {
+    text-decoration: none;
+    padding: .5rem 2rem;
+    border-left: 3px solid salmon;
+    color: inherit;
+}
+
+nav a:first-child {
+    border-left: none;
+}
+
+table, td, th {
+    border: 2px solid salmon;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td, th {
+    padding: .5rem 2rem;
+}
+
+tr:nth-child(odd) {
+    background-color: rgb(255, 204, 188);
+}
+
+
+/* hover, active */
+.hover-nav {
+    display: flex;
+}
+
+.hover-nav a {
+    flex: 1;
+}
+
+.hover-nav a:hover {
+    background-color: #EDC7B7;
+}
+
+.hover-div {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.hover-div img {
+    display: block;
+    height: 100%;
+}
+
+
+.hover-div span {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    opacity: 0;
+    padding: 1rem;
+    background-color: salmon;
+}
+
+
+.hover-div:hover::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+.hover-div:hover span {
+    opacity: 1;
+    z-index: 10;
+}
+
+/* target */
+.target-link {
+    text-decoration: none;
+    display: block;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: inherit;
+}
+
+#show {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    display: none;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    box-shadow: 0 4px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+#show:target {
+    display: block;
+}
+
+/* focus */
+input {
+    font-size: 1.4rem;
+    display: block;
+    margin: 5px auto;
+}
+.focus-input:focus {
+    background-color: salmon;
+    color: #EEE2DC;
+}
+
+/* disabled - enabled */
+.enabled-input:enabled {
+    background-color: rgb(255, 204, 188);
+}
+.disabled-input:disabled {
+    background-color: rgb(189, 189, 189);
+}
+
+/* required - optional */
+.optional-input,
+.required-input,
+.focus-required-input {
+    border-style: none;
+    outline-style: none;
+    border-radius: 0;
+}
+.optional-input:optional {
+    border-bottom: 3px solid rgb(0, 200, 83);
+}
+.focus-required-input:required,
+.required-input:required {
+    border-bottom: 3px solid rgb(213, 0, 0);
+}
+.focus-required-input:required:focus {
+    border: 3px solid rgb(213, 0, 0);
+    border-radius: 2px;
+}

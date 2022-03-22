@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Псевдоклассы и псевдоэлементы</title>
+    <link rel="stylesheet" href="css/pseudo.css">
+</head>
+<body>
+<section>
+    <h1>Псевдоэлементы</h1>
+    <p>
+        <strong>Псевдоэлемент</strong>
+        - это ключевое слово, добавляемое к селектору, которое <strong>позволяет стилизовать</strong>
+        определённую <strong>часть</strong> выбранного <strong>элемента</strong>.
+    </p>
+    <pre>
+селектор::псевдо-элемент {
+    свойство: значение;
+}
+    </pre>
+    <div>
+        <section>
+            <div class="description">
+                <h4>1. Первая буква элемента:</h4>
+            </div>
+            <div class="example">
+                <pre>
+.elem::first-letter {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+                </pre>
+                <p class="elem">
+                    dolor sit amet, consectetur adipisicing elit. Mollitia, soluta.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>2. Первая строка элемента:</h4>
+            </div>
+            <div class="example">
+                <pre>
+.elem::first-line {
+    color: red;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+                </pre>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta doloremque dolores id, porro quod
+                    suscipit. Alias animi architecto, asperiores blanditiis delectus earum illum ipsa iusto molestiae nam porro
+                    quam quod reprehenderit saepe, sed similique, sint veniam voluptate? Aut consectetur cupiditate dolores
+                    dolorum ex itaque, quasi voluptatum. Est fugiat, nesciunt.
+                </p>
+                <p class="text">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis dicta doloremque dolores id, porro quod
+                    suscipit. Alias animi architecto, asperiores blanditiis delectus earum illum ipsa iusto molestiae nam porro
+                    quam quod reprehenderit saepe, sed similique, sint veniam voluptate? Aut consectetur cupiditate dolores
+                    dolorum ex itaque, quasi voluptatum. Est fugiat, nesciunt.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>
+                    3. Selection - позволяет применить стили к части документа, который был выделен пользователем
+                    (например, с помощью мыши)
+                </h4>
+            </div>
+            <div class="example">
+                <pre>
+.select::selection {
+    color: yellow;
+    background-color: orangered;
+}
+                </pre>
+                <p class="select">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores atque aut excepturi id maxime nobis
+                    odit sed totam vitae? Animi.
+                </p>
+            </div>
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>4. Before / After</h4>
+                <p>
+                    <strong>before</strong>
+                    - псевдоэлемент, который является первым потомком выбранного элемента (по умолчанию строчный)
+                </p>
+                <p>
+                    <strong>after</strong> - псевдоэлемент, который является последним потомком выбранного элемента
+                    (по умолчанию строчный)
+                </p>
+            </div>
+            <div class="example">
+                <pre>
+.before-after::before {
+    content: "♥";
+    color: red;
+    margin-right: 5px;
+}
+
+.before-after::after {
+    content: "\2B50";
+    margin-left: 5px;
+}
+                </pre>
+                <p class="before-after">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab eaque enim eum eveniet.
+                </p>
+                <hr>
+                <pre>
+.quote::before {
+    content: "\275D";
+    color: rgb(0, 96, 100);
+}
+
+.quote::after {
+    content: "\275E";
+    color: rgb(0, 96, 100);
+}
+                </pre>
+                <div class="quote">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, alias at cupiditate doloremque eaque facilis
+                    fugiat modi optio, quaerat reiciendis rem sapiente sint suscipit temporibus ullam vitae voluptas voluptatem!
+                </div>
+            </div>
+        </section>
+    </div>
+
+</section>
+
+<section>
+    <h1>Псевдоклассы</h1>
+    <p>
+        <strong>Псевдокласс CSS</strong>
+        - это ключевое слово, добавленное к селектору, которое определяет его особое состояние, например, нажатая ссылка
+    </p>
+    <pre>
+селектор:псевдо-класс {
+    свойство: значение;
+}
+    </pre>
+    <div>
+        <section>
+            <div class="description">
+                <h4>1. Дочерние элементы:</h4>
+                <ul>
+                    <li><strong>селектор:first-child</strong> - первый дочерний элемент</li>
+                    <li><strong>селектор:last-child</strong> - последний дочерний элемент</li>
+                    <li><strong>селектор:nth-child(число)</strong> - например, :nth-child(2) - дочерний элемент под
+                        номером 2
+                    </li>
+                    <li><strong>селектор:nth-child(odd)</strong> - все нечетные дочерние элементы</li>
+                    <li><strong>селектор:nth-child(even)</strong> - все четные дочерние элементы</li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <pre>
+nav a {
+    border-left: 3px solid salmon;
+}
+
+nav a:first-child {
+    border-left: none;
+}
+                </pre>
+
+                <nav>
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                    <a href="#">Item 4</a>
+                </nav>
+                <hr>
+                <pre>
+tr:nth-child(odd){
+    background-color: rgb(255, 204, 188);
+}
+            </pre>
+
+                <table>
+                    <tr>
+                        <th>Вес</th>
+                        <th>Цвет</th>
+                        <th>Стоимость</th>
+                    </tr>
+                    <tr>
+                        <td>30 кг.</td>
+                        <td>Белый</td>
+                        <td>20 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>14 кг.</td>
+                        <td>Зеленый</td>
+                        <td>27 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>1 кг.</td>
+                        <td>Красный</td>
+                        <td>70 000 руб.</td>
+                    </tr>
+                    <tr>
+                        <td>19 кг.</td>
+                        <td>Белый</td>
+                        <td>30 000 руб.</td>
+                    </tr>
+                </table>
+
+            </div>
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>2. Псевдоклассы ссылок:</h4>
+                <ul>
+                    <li><strong>селектор:visited {стили}</strong> - ссылка, по которой был осуществлен переход</li>
+                    <li><strong>селектор:link {стили}</strong> - ссылка, которая ещё не была посещена</li>
+                </ul>
+            </div>
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>2. Псевдоклассы ссылок и других элементов:</h4>
+                <ul>
+                    <li><strong>селектор:active {стили}</strong> - элемент, активирован нажатием мыши, tab и пр</li>
+                    <li><strong>селектор:hover {стили}</strong> - срабатывает, когда пользователь наводит на элемент
+                        мышью!
+                    </li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <pre>
+.hover-nav a:hover {
+    background-color: #EDC7B7;
+}
+                </pre>
+                <nav class="hover-nav">
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                    <a href="#">Item 3</a>
+                    <a href="#">Item 4</a>
+                </nav>
+                <hr>
+                <pre>
+.hover-div span {
+    opacity: 0;
+}
+
+.hover-div:hover::after {
+    opacity: 1;
+}
+
+.hover-div:hover span {
+    opacity: 1;
+}
+                </pre>
+                <div class="hover-div">
+                    <img src="img/8.jpg" alt="picture">
+                    <span>Lorem ipsum dolor</span>
+                </div>
+            </div>
+
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>3. Стилизация элементов, к которым был осуществлен переход по гиперссылке:</h4>
+                <p><strong>селектор:target</strong> - позволяет связать гиперссылку 'a' с любым элементом на странице
+                </p>
+            </div>
+            <div class="example">
+                <pre>
+#show {
+    display: none;
+}
+
+#show:target {
+    display: block;
+}
+                </pre>
+                <a class="target-link" href="#show">Отобразить элемент</a>
+                <img id="show" src="img/8.jpg" alt="picture">
+            </div>
+
+        </section>
+
+        <section>
+            <div class="description">
+                <h4>4. Псевдоклассы элементов формы:</h4>
+                <ul>
+                    <li><strong>селектор:focus {стили}</strong> - применяется, когда элемент (такой как input) получает
+                        фокус
+                    </li>
+                    <li><strong>селектор:checked {стили}</strong> - input с типами radio и checkbox, option, которые
+                        выбраны
+                    </li>
+                    <li><strong>селектор:default {стили}</strong> - элемент формы, установленный по умолчанию для группы
+                        связанных элементов (radio или checkbox)
+                    </li>
+                    <li><strong>селектор:disabled {стили}</strong> - элемент, с установленным атрибутом disabled</li>
+                    <li><strong>селектор:enabled {стили}</strong> - элемент, без атрибута disabled</li>
+                    <li><strong>селектор:optional {стили}</strong> - элементы, для которых не был установлен атрибут
+                        required
+                    </li>
+                    <li><strong>селектор:required {стили}</strong> - элементы, для которых был установлен атрибут
+                        required
+                    </li>
+                    <li><strong>селектор:valid {стили}</strong> - поля, которые прошли html валидацию</li>
+                    <li><strong>селектор:invalid {стили}</strong> - поля, которые не прошли html валидацию</li>
+                    <li><strong>селектор:in-range {стили}</strong> - элементы, значение которых соответствует указанному
+                        для них диапазону ограничений
+                    </li>
+                    <li><strong>селектор:out-of-range {стили}</strong> - элементы, значение которых не соответствует
+                        указанному для них диапазону ограничений
+                    </li>
+                </ul>
+            </div>
+
+            <div class="example">
+                <pre>
+.focus-input:focus {
+    background-color: salmon;
+    color: #EEE2DC;
+}
+                </pre>
+                <input class="focus-input" type="text" placeholder="focus">
+
+                <hr>
+
+                <pre>
+.enabled-input:enabled {
+    background-color: rgb(255, 204, 188);
+}
+
+.disabled-input:disabled {
+    background-color: rgb(189, 189, 189);
+}
+                </pre>
+                <input class="enabled-input" type="text" placeholder="without disabled">
+                <input class="disabled-input" type="text" placeholder="disabled" disabled>
+
+                <hr>
+                <pre>
+.optional-input:optional {
+    border-bottom: 3px solid rgb(0, 200, 83);
+}
+.focus-required-input:required,
+.required-input:required {
+    border-bottom: 3px solid rgb(213, 0, 0);
+}
+.focus-required-input:required:focus {
+    border: 3px solid rgb(213, 0, 0);
+    border-radius: 2px;
+}
+                </pre>
+                <input class="optional-input" type="text" placeholder="without required">
+                <input class="required-input" type="text" placeholder="required" required>
+                <input class="focus-required-input" type="text" placeholder="focus on required" required>
+            </div>
+        </section>
+
+
+    </div>
+</section>
+
+</body>
+</html>
