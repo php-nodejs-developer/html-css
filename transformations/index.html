@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Переходы</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body class="container">
+
+<section>
+    <h1>Transition (переходы)</h1>
+    <span>
+        изменение времени перехода элемента из одного состояния в другое.
+    </span>
+    <ol>
+        <li>переходы (transition) применяются ко всем элементам, а также к псевдоэлементам ::before и ::after</li>
+        <li>не все CSS свойства можно анимировать (например, свойство display не доступно для анимации)</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">список доступных для анимации свойств</a></li>
+    </ol>
+
+    <h3>Переходы задаются следующими свойствами:</h3>
+    <ol>
+        <li>
+            transition-property - свойство перехода, которое нужно анимировать. Если необходимо анимировать несколько свойств, они перечисляются через запятую.
+            В значении 'all' будут анимированны все свойства
+        </li>
+        <li>
+            transition-duration - скорость перехода свойства из одного состояния в другое. Можно задать в секундах (s) или миллисекундах (ms)
+        </li>
+        <li>
+            transition-delay - время, после которого свойство начнет менять свое состояние. Можно задать в секундах (s) или миллисекундах (ms)
+        </li>
+        <li>
+            transition-timing-function - функция, которая описывает скорость перехода от одного значения к другому
+        </li>
+        <li>
+            transition - универсальное свойство, для описания предыдущих:
+            <pre class="inline">transition: transition-property transition-duration transition-timing-function transition-delay;</pre>
+        </li>
+    </ol>
+
+    <div class="example transition-opacity">
+        <img src="https://picsum.photos/1000/500?random=9">
+        <span>
+            При наведении элемент становится непрозрачным за 2 секунды
+        </span>
+        <pre>
+.transition-opacity {
+    opacity: .5;
+}
+
+.transition-opacity:hover {
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+        </pre>
+    </div>
+    <div class="example transition-color">
+        <span>При наведении элемент меняет цвет за 1 секунду и цвет фона за 2</span>
+        <pre>
+.transition-color {
+    color: rgb(24, 255, 255);
+    background-color: rgb(0, 184, 212);
+    transition: color 1s linear, background-color 3s ease;
+}
+
+.transition-color:hover {
+    background-color: rgb(24, 255, 255);
+    color: rgb(0, 184, 212);
+}
+        </pre>
+    </div>
+</section>
+
+<section>
+    <h1>Transform (трансформации)</h1>
+    <span>
+        позволяют сдвигать, поворачивать и масштабировать элементы.
+        Трансформации преобразовывают элемент, не затрагивая остальные элементы веб-страницы, т.е. другие элементы не сдвигаются относительно него.
+    </span>
+
+    <h3>Трансформации задаются следующими свойствами:</h3>
+    <ol>
+        <li>
+            translate - смещает элемент вниз/вверх, влево/вправо.
+            <pre>translate(x,y) - смещение по оси X и по оси Y</pre>
+            <pre>translateX(n) - смещение по оси X</pre>
+            <pre>translateY(n) - смещение по оси Y</pre>
+        </li>
+        <li>
+            scale - масштабирует элементы, делая их больше или меньше. Значения от 0 до 1 уменьшают элемент.
+            <pre>scale(x,y) - первое значение масштабирует элемент по ширине, второе — по высоте</pre>
+            <pre>scaleX(n) - масштабирует элемент по ширине</pre>
+            <pre>scaleY(n) - масштабирует элемент по высоте</pre>
+        </li>
+        <li>
+            rotate - поворачивает элементы на заданное количество градусов,
+            отрицательные значения (от -1deg до -360deg) поворачивают элемент против часовой стрелки, положительные — по часовой стрелке.
+            <pre>rotate(45deg) поворачивает элемент на 45 градусов по часовой стрелке</pre>
+        </li>
+        <li>
+            skew - используется для искажения сторон элемента относительно координатных осей.
+            Если указано одно значение, второе будет определено браузером автоматически.
+            <pre>skew(x-угол,y-угол) - искажение по x и по y</pre>
+            <pre>skewX(угол) - искажение относительно оси X</pre>
+            <pre>skewY(угол) - искажение относительно оси Y</pre>
+        </li>
+    </ol>
+    <div class="example translate">
+        <img src="https://picsum.photos/1000/500?random=4">
+        <span>
+            При наведении элемент смещается по оси Y
+        </span>
+        <pre>
+.translate:hover {
+    transform: translateX(3rem);
+}
+        </pre>
+    </div>
+    <div class="example scale">
+        <img src="https://picsum.photos/1000/500?random=7">
+        <span>
+            При наведении элемент увеличивается в ширину и в высоту
+        </span>
+        <pre>
+.scale:hover {
+    transform: scale(1.2, 1.5);
+}
+        </pre>
+    </div>
+    <div class="example rotate">
+        <img src="https://picsum.photos/1000/500?random=22">
+        <span>
+            Элемент повернуты на 5 градусов против часовой стрелки
+        </span>
+        <pre>
+.rotate {
+    transform: rotate(-5deg);
+}
+        </pre>
+    </div>
+    <div class="example skew">
+        <img src="https://picsum.photos/1000/500?random=27">
+        <span>
+            Искажение относительно X на 10 градусов
+        </span>
+        <pre>
+.skew {
+    transform: skewX(10deg);
+}
+        </pre>
+    </div>
+
+
+</section>
+
+
+<section>
+    <h1>Animation (анимация)</h1>
+    <span>
+        придают динамичность страницам.
+    </span>
+    <ol>
+        <li>анимации применяются ко всем элементам, а также к псевдоэлементам ::before и ::after</li>
+        <li>не все CSS свойства можно анимировать (например, свойство display не доступно для анимации)</li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties">список доступных для анимации свойств</a></li>
+    </ol>
+    <h3>Объявление анимации</h3>
+    <pre>
+@keyframes название-анимации {
+    набор правил:
+    0% { стили } — первый шаг анимации
+    50% { стили } — шаг на половине анимации
+    100% { стили } — последний шаг анимации
+}
+    </pre>
+
+    <h3>Анимации задаются следующими свойствами:</h3>
+    <ol>
+        <li>animation-name - название анимации</li>
+        <li>animation-duration - как долго длится анимация (в секундах - s или миллисекундах - ms)</li>
+        <li>animation-timing-function: как вычисляются промежуточные состояния</li>
+        <li>animation-delay: анимация начинается спустя некоторое время</li>
+        <li>animation-iteration-count: сколько раз должна выполняться анимация (infinite - бесконечно)</li>
+        <li>
+            animation-direction: должно движение идти в обратную сторону или нет
+            <ol>
+                <li>normal - идёт с самого начала, после завершения цикла возвращается к исходному состоянию</li>
+                <li>alternate - идёт с начала до конца, затем плавно возвращается в исходное положение</li>
+                <li>reverse - идёт с конца цикла, после его завершения возвращается к исходному состоянию</li>
+                <li>alternate-reverse - идёт с конца до начала, затем плавно возвращается в исходное положение</li>
+            </ol>
+        </li>
+        <li>
+            animation-fill-mode: какие стили применяются до начала анимации и после её завершения
+            <ol>
+                <li>none - не применяются какие-либо стили</li>
+                <li>forwards - к элементу по окончанию анимации применяется стиль последнего кадра</li>
+                <li>backwards - к элементу по окончанию анимации применяется стиль первого кадра</li>
+                <li>both - к элементу по окончанию анимации элементу применяются оба правила (как для forwards, так и для backwards)</li>
+            </ol>
+        </li>
+    </ol>
+
+    <div class="example animation-blink">
+        <span>
+            Бесконечное изменение прозрачности элемента
+        </span>
+        <pre>
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animation-blink {
+    animation: blink 5s ease 0s infinite alternate forwards;
+}
+        </pre>
+    </div>
+    <div class="example animation-color-size">
+        <span>
+            Бесконечное изменение размера и цвета элемента
+        </span>
+        <pre>
+@keyframes color-size {
+    0% {
+        background-color: rgb(96, 125, 139);
+        width: 300px;
+    }
+    25% {
+        background-color: rgb(33, 150, 243);
+        width: 320px;
+    }
+    50% {
+        background-color: rgb(76, 175, 80);
+        width: 340px;
+    }
+    75% {
+        background-color: rgb(255, 152, 0);
+        width: 360px;
+    }
+    100% {
+        background-color: rgb(244, 67, 54);
+        width: 380px;
+    }
+}
+
+.animation-color-size {
+    padding: 1rem;
+    animation: color-size 5s ease 0s infinite alternate forwards;
+}
+        </pre>
+    </div>
+
+</section>
+
+<section>
+    <h1>Box-shadow (тени)</h1>
+    <span>
+        внешние и внутренние.
+    </span>
+
+    <h3>Тени задаются следующими свойствами:
+        <pre>box-shadow: смещение-по-ширине смещение-по-высоте радиус-размытия размер-тени цвет-тени;</pre>
+        <pre>box-shadow: inset смещение-по-ширине смещение-по-высоте радиус-размытия размер-тени цвет-тени;</pre></h3>
+    <ul>
+        <li>смещение-по-ширине - положительное значение рисует тень, смещенную вправо от текста, отрицательная длина — влево</li>
+        <li>смещение-по-высоте - положительное значение смещает тень вниз, отрицательное — вверх</li>
+        <li>радиус-размытия - если значение размытия равно нулю, то край тени четкий, в противном случае,
+            чем больше значение, тем больше размыт край тени. Отрицательные значения не допускаются
+        </li>
+        <li>
+            размер-тени - расстояние, на которое тень увеличивается. Положительные значения заставляют тень расширяться во всех направлениях
+            на указанный радиус. Отрицательные значения заставляют тень сжиматься
+        </li>
+        <li>цвет тени - черный, если не задан другой</li>
+        <li>inset - тень блока отображается с внутренней стороны</li>
+    </ul>
+
+
+    <div class="example shadow">
+        <span>
+            Внешняя тень
+        </span>
+        <pre>
+.shadow {
+    box-shadow: 3px 4px 8px 6px #FF4E00;
+}
+        </pre>
+    </div>
+
+    <div class="example inset-shadow">
+        <span>
+            Внутренняя тень
+        </span>
+        <pre>
+.inset-shadow {
+    box-shadow: inset 0 0 6px 6px #FF4E00;
+}
+        </pre>
+    </div>
+</section>
+
+
+</body>
+</html>

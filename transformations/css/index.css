@@ -1,0 +1,173 @@
+html {
+    font-size: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.inline {
+    display: inline;
+}
+
+.skew,
+.rotate,
+.scale,
+.translate,
+.transition-opacity {
+    height: 300px;
+    position: relative;
+}
+
+.transition-opacity {
+    opacity: .5;
+}
+
+.skew span,
+.skew pre,
+.rotate span,
+.rotate pre,
+.scale span,
+.scale pre,
+.translate span,
+.translate pre,
+.transition-opacity span,
+.transition-opacity pre {
+    position: absolute;
+    background: rgb(24, 255, 255);
+    padding: 1rem;
+}
+
+.skew span,
+.rotate span,
+.scale span,
+.translate span,
+.transition-opacity span {
+    top: 5px;
+    left: 5px;
+}
+
+.skew pre,
+.rotate pre,
+.scale pre,
+.translate pre,
+.transition-opacity pre {
+    bottom: 5px;
+    left: 5px;
+    margin-bottom: 0;
+}
+
+.transition-color:hover {
+    background-color: rgb(24, 255, 255);
+    color: rgb(0, 184, 212);
+}
+
+/* transition */
+.transition-opacity:hover {
+    opacity: 1;
+    transition: opacity 2s linear;
+}
+
+.transition-color {
+    color: rgb(24, 255, 255);
+    background-color: rgb(0, 184, 212);
+    padding-top: 1rem;
+    transition: color 1s linear, background-color 3s ease;
+}
+
+/* translate */
+.translate:hover {
+    transform: translateX(3rem);
+    transition: transform 2s linear;
+}
+/* scale */
+.scale:hover {
+    transform: scale(1.2, 1.5);
+    transition: transform 2s linear;
+}
+
+/* rotate */
+.rotate {
+    transform: rotate(-5deg);
+}
+
+/* skew */
+.skew {
+    transform: skewX(10deg);
+}
+
+/* keyframes, animation */
+@keyframes blink {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: .5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.animation-blink {
+    color: rgb(0, 176, 255);
+    font-size: 1.5rem;
+    animation: blink 5s ease 0s infinite alternate forwards;
+}
+
+.animation-blink span {
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+@keyframes color-size {
+    0% {
+        background-color: rgb(96, 125, 139);
+        width: 300px;
+    }
+    25% {
+        background-color: rgb(33, 150, 243);
+        width: 320px;
+    }
+    50% {
+        background-color: rgb(76, 175, 80);
+        width: 340px;
+    }
+    75% {
+        background-color: rgb(255, 152, 0);
+        width: 360px;
+    }
+    100% {
+        background-color: rgb(244, 67, 54);
+        width: 380px;
+    }
+}
+
+.animation-color-size span {
+    display: block;
+    padding: 1rem;
+    animation: color-size 5s ease 0s infinite alternate forwards;
+}
+
+/* box-shadow */
+.shadow {
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 3px 4px 8px 6px #FF4E00;
+}
+
+.inset-shadow {
+    padding: 2rem;
+    box-shadow: inset 0 0 6px 6px #FF4E00;
+}
+
+
