@@ -30,6 +30,10 @@ img {
     background-color: rgb(21, 101, 192);
 }
 
+.text-menu {
+    display: none;
+}
+
 .menu-link {
     color: rgb(227, 242, 253);
     text-decoration: none;
@@ -165,4 +169,104 @@ img {
 .footer {
     background-color: rgb(21, 101, 192);
     height: 80px;
+}
+
+@media screen and (min-width: 600px) and (max-width: 767px){
+    /* пункты меню скрыты,
+       вверху страницы отобразить 'Menu',
+       при нажатии, отобразить пункты меню */
+    .text-menu {
+        color: rgb(227, 242, 253);
+        display: block;
+        padding: 10px;
+    }
+    .menu {
+        display: none;
+    }
+    .text-menu:hover + .menu {
+        display: block;
+    }
+    /* меню вертикальное по центру */
+    /* input под ссылками */
+    /* input во всю ширину с отступами слева, справа и снизу 10px*/
+    .navbar {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-link {  /* меню вертикальное по центру */
+        display: block;
+    }
+    /* input во всю ширину с отступами слева, справа и снизу 10px*/
+    form {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+
+        display: flex; /* если input {width: 100%;} стиль лишний */
+    }
+    .search-input {
+        flex-grow: 1; /* либо width: 100%; */
+    }
+    .main { /* карточки в 2 колонки */
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .horizontal-item { /* 4 карточку можно скрыть */
+        /* display: none; */
+        /* либо перенести в нижний ряд на 2 колонки */
+        grid-column: 1 / 3;
+        grid-row: 3 / 4;
+    }
+    /* по 2 круга в ряд, отступ между рядами 10px */
+    .circles {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-content: center;
+    }
+    .circle {
+        margin-bottom: 10px;
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .circles {
+        flex-wrap: wrap;
+    }
+
+    .circle {
+        width: 40vw;
+        height: 40vw;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 599px){
+    .carousel,  /* скрыть карусель */
+    .circles, /* скрыть круги */
+    .horizontal-item { /* скрыть 4ю карточку или grid-column: auto; */
+        display: none;
+    }
+    /* остальные или все карточки в 1 колонку */
+    /*.menu,*/  /* меню вертикальное по центру */
+    .navbar, /* инпут под ссылками */
+    .main {
+        display: flex;
+        flex-direction: column;
+    }
+    .menu-link{  /* меню вертикальное по центру */
+        display: block;
+    }
+    /* input во всю ширину с отступами слева, справа и снизу 10px*/
+    form {
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
+
+        display: flex; /* если input {width: 100%;} стиль лишний */
+    }
+    .search-input {
+        flex-grow: 1; /* либо width: 100%; */
+    }
+
 }

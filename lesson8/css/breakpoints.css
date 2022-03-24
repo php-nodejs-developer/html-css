@@ -1,6 +1,22 @@
+html {
+    font-size: 20px; /* 1rem = 20px */
+}
+
 body {
     margin: 0;
     background: #e53935;
+}
+
+div {
+    border: 6px solid #2E7D32;
+    width: 20rem;
+    height: 30rem;
+}
+
+p {
+    border: 6px solid white;
+    width: 10rem;  /* 0.2rem == .2rem */
+    height: 20rem;
 }
 
 /* медиазапросы и контрольные точки */
@@ -25,7 +41,8 @@ not (min-width: 544px)
 2. min-width - задаёт минимальную ширину области
 3. max-width - задает максимальную область
 4. 5. 6. height, min-height и max-height - аналогично, но в отношении высоты
-7. orientation - функция, которая проверяет то, в каком режиме (portrait или landscape) отображается страница
+7. orientation - функция, которая проверяет то,
+ в каком режиме (portrait или landscape) отображается страница
 8. aspect-ratio (min-aspect-ratio, max-aspect-ratio) - позволяют указать то, как ширина устройства должна относиться к высоте
  */
 
@@ -36,7 +53,7 @@ not (min-width: 544px)
 }
 
 */
-/* ширина от 992px до 1200*/
+/* ширина от 992px до 1200 */
 @media screen and (min-width: 992px) and (max-width: 1200px){
     body {
         background: #D81B60;
@@ -61,6 +78,14 @@ not (min-width: 544px)
 @media screen and (max-width: 599px){ /* 480px */
     body {
         background: #3949AB;
+    }
+
+    p {
+        word-break: break-all;
+    }
+
+    html {
+        font-size: 10px; /* 1rem = 10px */
     }
 }
 
