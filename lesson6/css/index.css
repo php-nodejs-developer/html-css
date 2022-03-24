@@ -148,3 +148,26 @@ main div:nth-child(4) > div > a {
     border-radius: 3px;
     text-transform: capitalize;
 }
+
+.bottom-aside {
+    display: flex;
+    justify-content: space-around;
+}
+
+.circle {
+    width: 15vw;
+    height: 15vw;
+    color: rgb(21, 101, 192);
+    background-color: rgb(227, 242, 253);
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.circle span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    text-align: justify;
+    transform: translate(-50%, -50%);
+}
