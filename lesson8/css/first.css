@@ -172,23 +172,20 @@ img {
 }
 
 @media screen and (min-width: 600px) and (max-width: 767px){
-    /* пункты меню скрыты,
-       вверху страницы отобразить 'Menu',
-       при нажатии, отобразить пункты меню */
-    .text-menu {
+    .text-menu { /* вверху страницы отобразить 'Menu' */
         color: rgb(227, 242, 253);
         display: block;
         padding: 10px;
+        text-transform: uppercase;
     }
-    .menu {
+    .menu { /* пункты меню скрыты */
         display: none;
     }
-    .text-menu:hover + .menu {
+    .text-menu:hover + .menu { /* при нажатии, отобразить пункты меню */
         display: block;
     }
-    /* меню вертикальное по центру */
+
     /* input под ссылками */
-    /* input во всю ширину с отступами слева, справа и снизу 10px*/
     .navbar {
         display: flex;
         flex-direction: column;
@@ -218,10 +215,11 @@ img {
         grid-row: 3 / 4;
     }
     /* по 2 круга в ряд, отступ между рядами 10px */
+    /* вариант 1 */
     .circles {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        align-content: center;
+        justify-items: center;
     }
     .circle {
         margin-bottom: 10px;
@@ -229,7 +227,8 @@ img {
         height: 25vw;
     }
 
-    .circles {
+    /* вариант 2 */
+   /* .circles {
         flex-wrap: wrap;
     }
 
@@ -237,7 +236,7 @@ img {
         width: 40vw;
         height: 40vw;
         margin-bottom: 10px;
-    }
+    }*/
 }
 
 @media screen and (max-width: 599px){
