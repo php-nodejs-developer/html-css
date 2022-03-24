@@ -1,0 +1,18 @@
+@import "flex-grid.css";
+
+body {
+    margin: 0;
+}
+
+.margin-bottom {
+    margin-bottom: 30px;
+}
+
+.border {
+    border: 2px solid orchid;
+    padding: 15px;
+}
+
+.grow {
+    flex-grow: 1;
+}
